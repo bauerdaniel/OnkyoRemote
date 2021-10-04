@@ -1,0 +1,12 @@
+[package]
+name = "onkyo"
+version = "0.1.0"
+authors = ["havoc <havoc.remake@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+iscp = { path = "../iscp" }
+structopt = "0.3.13"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+directories-next = "2.0.0"
