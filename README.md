@@ -1,12 +1,50 @@
 # OnkyoRemote
+
 Control your Onkyo AV receiver over the network using the ISCP protocol.
 
-The project consists of a library implementing the ISCP commands, a CLI app and an experimental REST interface.
+The project consists of a library that implements the ISCP commands, a CLI app, and an experimental REST interface.
 
 Runs on Linux, macOS and Windows. Written in Rust.
 
-## CLI App
-### Usage
+
+## Installation
+
+
+### Prerequisites
+
+- [Git](https://git-scm.com "Git")
+- [Rust](https://www.rust-lang.org/tools/install "Rust") (2018 edition)
+
+
+### Build & Install
+
+1. Clone project repository  
+`git clone https://github.com/bauerdaniel/OnkyoRemote.git`
+2. Change to the source directory  
+`cd OnkyoRemote/onkyo`
+3. Compile the OnkyoRemote app using Cargo  
+`cargo build --release`
+4. Copy the built binary to any folder, e.g. your home directory  
+`mkdir ~/OnkyoRemote`  
+`cp target/release/onkyo ~/OnkyoRemote/`
+5. Add the application folder to the PATH environment variable  
+`export PATH=~/OnkyoRemote:$PATH`
+
+
+### Setup
+
+Note: The first time you start up, a configuration file is created to store the device information.
+
+1. Discover available devices on the network  
+`onkyo discover`
+2. List available devices  
+`onkyo list`
+3. Select a device to control  
+`onkyo select <id>`
+
+
+## Usage
+
 ```
 USAGE:
     onkyo <SUBCOMMAND>
@@ -29,7 +67,8 @@ SUBCOMMANDS:
     volume      Changes the volume level of the selected device
 ```
 
-### Examples
+#### Examples
+
 ```
 $ onkyo on
 ⚡
