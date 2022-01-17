@@ -177,8 +177,7 @@ impl Application {
     pub fn list(&self) {
         println!("Available devices:");
         println!();
-        let index = 0;
-        for device in self.remote.devices.iter() {
+        for (index, device) in self.remote.devices.iter().enumerate() {
             println!("\t{}: {} at {}", index, device.model, device.address);
         }
         println!();
